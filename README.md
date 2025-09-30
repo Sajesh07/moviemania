@@ -1,1 +1,1 @@
-##Intermediate Demo React Project
+Intermediate Demo React Project
