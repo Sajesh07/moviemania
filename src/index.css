@@ -54,8 +54,9 @@ body {
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  /* overflow: scroll; */
+  overflow-y: auto;
   position: relative;
+  height: 100%;
 }
 
 .loader {
@@ -138,11 +139,43 @@ body {
 .list {
   list-style: none;
   padding: 0.8rem 0;
-  /* overflow: scroll; */
+  max-height: calc(100vh - 20rem);
+  overflow-y: auto;
 }
 
 .list-watched {
   height: calc(100% - 9rem);
+  overflow-y: auto;
+}
+
+/* Custom scrollbar styling */
+.box::-webkit-scrollbar,
+.list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.box::-webkit-scrollbar-track,
+.list::-webkit-scrollbar-track {
+  background: var(--color-background-100);
+  border-radius: 4px;
+}
+
+.box::-webkit-scrollbar-thumb,
+.list::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.box::-webkit-scrollbar-thumb:hover,
+.list::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+}
+
+/* Firefox scrollbar styling */
+.box,
+.list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background-100);
 }
 
 .list li {
@@ -242,6 +275,8 @@ body {
 .details {
   line-height: 1.4;
   font-size: 1.4rem;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .details header {
